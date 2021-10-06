@@ -1,1 +1,5 @@
-{}
+{
+  "ignoreTestFiles": ["*.PageObject.ts", "*.Util.ts"],
+  "video": false,
+  "screenshotOnRunFailure": true
+}

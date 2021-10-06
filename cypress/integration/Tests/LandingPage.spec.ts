@@ -1,10 +1,10 @@
 /// <reference types= "cypress" />
 
 import {LandingPage} from '../PageObjects/LandingPage.PageObject';
-import {Browser} from '../Utils/Browser';
+import {BrowserUtil} from '../Utils/Browser.Util';
 
 const landingPage = new LandingPage();
-const browser = new Browser();
+const browser = new BrowserUtil();
 
 it("Smoke", async () => {
     let url = 'http://www.google.com';

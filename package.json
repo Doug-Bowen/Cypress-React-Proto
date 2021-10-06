@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "cypress": "^8.5.0"
+    "cypress": "^8.5.0",
+    "license": "MIT",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "cypress-intellij-reporter": "^0.0.6"
   }
 }

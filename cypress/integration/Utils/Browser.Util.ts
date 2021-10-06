@@ -1,4 +1,4 @@
-export class Browser {
+export class BrowserUtil {
     _baseUrl: string = 'http://localhost:3000/';
     _headed: boolean = false;
     Directions = {
