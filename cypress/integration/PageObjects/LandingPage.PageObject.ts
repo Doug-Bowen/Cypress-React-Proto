@@ -1,4 +1,6 @@
 export class LandingPage {
-    url = "http://localhost:3000";
-    reactLogo = "img.App-logo";
+    getTwoButton() { return cy.get(':nth-child(4) > :nth-child(2) > button');};
+    getPlusButton() { return cy.get(':nth-child(4) > .orange > button');};
+    getEqualButton() { return cy.get(':nth-child(5) > .orange > button');};
+    getTotalField() { return cy.get('.component-display > div');};
 }
