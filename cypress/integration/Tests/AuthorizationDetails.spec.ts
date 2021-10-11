@@ -1,9 +1,9 @@
 // @ts-nocheck
-import {AuthorizationDetails} from '../PageObjects/AuthorizationDetails.PageObject';
+import {AuthorizationDetailsPage} from '../PageObjects/AuthorizationDetails.PageObject';
 import {BrowserUtil} from '../Utils/Browser.Util';
 import {AssertionUtil} from '../Utils/Assertions.Util';
 
-const authorizationDetailsPage = new AuthorizationDetails();
+const authorizationDetailsPage = new AuthorizationDetailsPage();
 const browser = new BrowserUtil();
 const assertions = new AssertionUtil();
 

@@ -1,7 +1,7 @@
 import {UrlsUtil} from '../Utils/Urls.Util';
 const url = new UrlsUtil();
 
-export class AuthorizationDetails {
+export class AuthorizationDetailsPage {
     _url: string = url._AuthorizationDetailsPage;
 
     // Definitions
