@@ -3,7 +3,7 @@ import {AuthorizationDetails} from '../PageObjects/AuthorizationDetails.PageObje
 import {BrowserUtil} from '../Utils/Browser.Util';
 import {AssertionUtil} from '../Utils/Assertions.Util';
 
-const authorizationPage = new AuthorizationDetails();
+const authorizationDetailsPage = new AuthorizationDetails();
 const browser = new BrowserUtil();
 const assertions = new AssertionUtil();
 
@@ -16,11 +16,11 @@ it("Smoke Authorization Details Page", () => {
     let expectedFooterTitle = 'Footer';
 
     // Act
-    browser.visit(authorizationPage._url);
+    browser.visit(authorizationDetailsPage._url);
 
     // Assert
-    authorizationPage.getHeaderTopTitle().should(assertions._haveText, expectedHeaderTopTitle);
-    authorizationPage.getHeaderBottomTitle().should(assertions._haveText, expectedHeaderBottomTitle);
-    authorizationPage.getFooterTitle().should(assertions._haveText, expectedFooterTitle);
+    authorizationDetailsPage.getHeaderTopTitle().should(assertions._haveText, expectedHeaderTopTitle);
+    authorizationDetailsPage.getHeaderBottomTitle().should(assertions._haveText, expectedHeaderBottomTitle);
+    authorizationDetailsPage.getFooterTitle().should(assertions._haveText, expectedFooterTitle);
 });
 

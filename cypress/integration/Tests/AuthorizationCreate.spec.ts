@@ -2,25 +2,25 @@
 import {AuthorizationCreate} from '../PageObjects/AuthorizationCreate.PageObject';
 import {BrowserUtil} from '../Utils/Browser.Util';
 import {AssertionUtil} from '../Utils/Assertions.Util';
+import {FormFields} from '../Utils/FormFields.Util';
 
-const authorizationPage = new AuthorizationDetails();
+const authorizationCreatePage = new AuthorizationCreate();
 const browser = new BrowserUtil();
 const assertions = new AssertionUtil();
+const formfields = new FormFields();
 
 it("Smoke Authorization Create Page", () => {
 
     // Arrange
-    let detailsPageText = 'Details Page';
-    let expectedHeaderTopTitle = detailsPageText;
-    let expectedHeaderBottomTitle = detailsPageText;
-    let expectedFooterTitle = 'Footer';
+    let firstName = 'Chuck';
+    let lastName = 'Norris'
 
     // Act
-    browser.visit(authorizationPage._Url);
+    browser.visit(authorizationCreatePage._url);
+    formfields.fillFormField({field: authorizationCreatePage.getLastNameField(), textToEnter: lastName});
+    formfields.fillFormField({field: authorizationCreatePage.getFirstNameField(), textToEnter: firstName});
 
     // Assert
-    authorizationPage.getHeaderTopTitle().should(assertions._haveText, expectedHeaderTopTitle);
-    authorizationPage.getHeaderBottomTitle().should(assertions._haveText, expectedHeaderBottomTitle);
-    authorizationPage.getFooterTitle().should(assertions._haveText, expectedFooterTitle);
+
 });
 
