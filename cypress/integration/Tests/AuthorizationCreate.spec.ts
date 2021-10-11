@@ -1,5 +1,5 @@
 // @ts-nocheck
-import {AuthorizationDetails} from '../PageObjects/AuthorizationDetails.PageObject';
+import {AuthorizationCreate} from '../PageObjects/AuthorizationCreate.PageObject';
 import {BrowserUtil} from '../Utils/Browser.Util';
 import {AssertionUtil} from '../Utils/Assertions.Util';
 
@@ -7,7 +7,7 @@ const authorizationPage = new AuthorizationDetails();
 const browser = new BrowserUtil();
 const assertions = new AssertionUtil();
 
-it("Smoke Authorization Details Page", () => {
+it("Smoke Authorization Create Page", () => {
 
     // Arrange
     let detailsPageText = 'Details Page';
@@ -16,7 +16,7 @@ it("Smoke Authorization Details Page", () => {
     let expectedFooterTitle = 'Footer';
 
     // Act
-    browser.visit(authorizationPage._url);
+    browser.visit(authorizationPage._Url);
 
     // Assert
     authorizationPage.getHeaderTopTitle().should(assertions._haveText, expectedHeaderTopTitle);

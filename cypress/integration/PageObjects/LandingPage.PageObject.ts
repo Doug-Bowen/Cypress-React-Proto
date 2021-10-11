@@ -2,9 +2,9 @@ import {UrlsUtil} from '../Utils/Urls.Util';
 const url = new UrlsUtil();
 
 export class LandingPage {
-    _Url: string = url._landingPage;
+    _url: string = url._landingPage;
 
-    //Widgets definitions
+    //Definitions
     _topWidgets = '.css-1grnugx-Widgets';
     _fileWidget = this._topWidgets +  ' > :nth-child(1)';
     _avgLengthRentalWidget = this._topWidgets +  ' > :nth-child(2)';
@@ -12,7 +12,7 @@ export class LandingPage {
     _avgTotalAuthWidget = this._topWidgets +  ' > :nth-child(4)';
     _simpleDiv = ' > div';
 
-    //Widget Actions
+    //Actions
     getFileWidgetText() { return cy.get( this._fileWidget + this._simpleDiv);};
     getAvgLengthRentalWidgetText() { return cy.get( this._avgLengthRentalWidget + this._simpleDiv);};
     getDaysBehindWidgetText() { return cy.get( this._daysBehindWidget + this._simpleDiv);};
