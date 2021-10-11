@@ -1,5 +1,5 @@
 export class BrowserUtil {
-    _baseUrl: string = 'https://ahfarmer.github.io/calculator/';
+    _baseUrl: string = 'http://localhost:3000/';
     _headed: boolean = false;
     Directions = {
         forward: 1,
