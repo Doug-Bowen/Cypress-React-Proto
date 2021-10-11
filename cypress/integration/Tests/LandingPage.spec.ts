@@ -2,7 +2,6 @@
 
 import {LandingPage} from '../PageObjects/LandingPage.PageObject';
 import {BrowserUtil} from '../Utils/Browser.Util';
-import landing = Mocha.reporters.landing;
 
 const landingPage = new LandingPage();
 const browser = new BrowserUtil();
