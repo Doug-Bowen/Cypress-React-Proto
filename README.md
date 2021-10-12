@@ -1,4 +1,4 @@
-This project is a simple list of tests that automate a a prototype app built with React and TypeScript.
+Automated Tests against a prototype app built with React and TypeScript.
 ---
 App Breakdown
 * React + TypeScript
