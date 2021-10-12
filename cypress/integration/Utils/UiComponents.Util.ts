@@ -4,7 +4,7 @@ export class UiComponentsUtil {
         field.type(textToEnter);
     }
 
-    verifyFormField({field, expectedText}: VerifyFormField) {
+    verifyFormFieldContents({field, expectedText}: VerifyFormField) {
         field.invoke("val").should("eq", expectedText);
     }
 }
@@ -13,8 +13,11 @@ interface FillFormFieldParams {
     field: any;
     textToEnter: any;
 }
-
 interface VerifyFormField {
     field: any;
     expectedText: any;
 }
+
+//dropdown
+//date picker
+//disabled field
