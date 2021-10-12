@@ -1,5 +1,6 @@
 {
   "ignoreTestFiles": ["*.PageObject.ts", "*.Util.ts"],
   "video": false,
-  "screenshotOnRunFailure": true
+  "screenshotOnRunFailure": true,
+  "watchForFileChanges": false
 }
