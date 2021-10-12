@@ -8,3 +8,4 @@ export class UrlsUtil {
     _AuthorizationCreatePage: string = this._landingPage + this._authorization + '/create';
     _AuthorizationDetailsPage: string = this._landingPage + this._authorization + '/details';
 }
+

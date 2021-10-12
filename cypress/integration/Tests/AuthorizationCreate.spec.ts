@@ -3,7 +3,7 @@ import {AuthorizationCreatePage} from '../PageObjects/AuthorizationCreate.PageOb
 import {BrowserUtil} from '../Utils/Browser.Util';
 import {AssertionUtil} from '../Utils/Assertions.Util';
 import {UiComponentsUtil} from '../Utils/UiComponents.Util';
-import testUser from '../../Fixtures/User - ChuckNorris.json'
+import {userMocker} from '../../Fixtures/Users.Factory.ts';
 
 const authorizationCreatePage = new AuthorizationCreatePage();
 const browser = new BrowserUtil();
@@ -13,20 +13,32 @@ const uiComponents = new UiComponentsUtil();
 it("Smoke Authorization Create Page", () => {
 
     // Arrange
+    const mockUser = new userMocker(
+        {
+            lastName: "Norris",
+            firstName: "Chuck",
+            primaryPhone: "867-5309",
+            secondaryPhone: "1-800-273-8255",
+            email: "chuck.norris@texasRangers.org",
+            street: "Salt Lick Creek Rd",
+            city: "Bugtussle",
+            state: "KY",
+            zip: "42140"
+        });
+    browser.visit(authorizationCreatePage._url);
 
     // Act
-    browser.visit(authorizationCreatePage._url);
-    uiComponents.fillFormField({field: authorizationCreatePage.getLastNameField(), textToEnter: testUser.lastName});
-    uiComponents.fillFormField({field: authorizationCreatePage.getFirstNameField(), textToEnter: testUser.firstName});
-    uiComponents.fillFormField({field: authorizationCreatePage.getPrimaryPhoneField(), textToEnter: testUser.primaryPhoneNumber});
-    uiComponents.fillFormField({field: authorizationCreatePage.getSecondaryPhoneField(), textToEnter: testUser.secondaryPhoneNumber});
-    uiComponents.fillFormField({field: authorizationCreatePage.getEmailField(), textToEnter: testUser.email});
+    uiComponents.fillFormField({field: authorizationCreatePage.getLastNameField(), textToEnter: mockUser.lastName});
+    uiComponents.fillFormField({field: authorizationCreatePage.getFirstNameField(), textToEnter: mockUser.firstName});
+    uiComponents.fillFormField({field: authorizationCreatePage.getPrimaryPhoneField(), textToEnter: mockUser.primaryPhone});
+    uiComponents.fillFormField({field: authorizationCreatePage.getSecondaryPhoneField(), textToEnter: mockUser.secondaryPhone});
+    uiComponents.fillFormField({field: authorizationCreatePage.getEmailField(), textToEnter: mockUser.email});
 
     // Assert
-    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getLastNameField(), expectedText: testUser.lastName});
-    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getFirstNameField(), expectedText: testUser.firstName});
-    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getPrimaryPhoneField(), expectedText: testUser.primaryPhoneNumber});
-    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getSecondaryPhoneField(), expectedText: testUser.secondaryPhoneNumber});
-    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getEmailField(), expectedText: testUser.email});
+    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getLastNameField(), expectedText: mockUser.lastName});
+    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getFirstNameField(), expectedText: mockUser.firstName});
+    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getPrimaryPhoneField(), expectedText: mockUser.primaryPhone});
+    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getSecondaryPhoneField(), expectedText: mockUser.secondaryPhone});
+    uiComponents.verifyFormFieldContents({field: authorizationCreatePage.getEmailField(), expectedText: mockUser.email});
 });
 
