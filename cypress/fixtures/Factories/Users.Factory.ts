@@ -1,4 +1,4 @@
-export const userMocker = ({lastName, firstName, primaryPhone,secondaryPhone,email,street,city,state,zip}: IMockUser): IMockUser => {
+export const userFactory = ({lastName, firstName, primaryPhone,secondaryPhone,email,street,city,state,zip}: IMockUser): IMockUser => {
     return {
         lastName: lastName,
         firstName: firstName,

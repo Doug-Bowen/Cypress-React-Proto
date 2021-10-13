@@ -21,3 +21,5 @@ interface VerifyFormField {
 //dropdown
 //date picker
 //disabled field
+//toggle
+//button

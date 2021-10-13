@@ -1,4 +1,4 @@
-export const claimMocker = ({number, type, condition,year,make,model}: IMockClaim): IMockClaim => {
+export const claimFactory = ({number, type, condition,year,make,model}: IMockClaim): IMockClaim => {
     return {
         number: number,
         type: type,
